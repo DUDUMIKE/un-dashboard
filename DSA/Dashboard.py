@@ -883,7 +883,7 @@ def update_ml(tab):
     fig_acc.update_yaxes(range=[0, 110], title="Accuracy (%)")
 
     return fig_svm, fig_dt, fig_feat, fig_acc
-
+server = app.server
 
 # ==============================================================================
 #  RUN
@@ -891,10 +891,5 @@ def update_ml(tab):
 if __name__ == "__main__":
     print("\n" + "=" * 55)
     print("  🌍 UN Waste Management Dashboard")
-    print("=" * 55)
-    print("  ✅ Starting server...")
-    print("  👉 Open your browser and go to:")
-    print("     http://127.0.0.1:8050")
-    print("  Press Ctrl+C to stop the server")
     print("=" * 55 + "\n")
     app.run(debug=False)
