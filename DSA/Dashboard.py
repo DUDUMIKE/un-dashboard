@@ -883,13 +883,18 @@ def update_ml(tab):
     fig_acc.update_yaxes(range=[0, 110], title="Accuracy (%)")
 
     return fig_svm, fig_dt, fig_feat, fig_acc
-server = app.server
 
 # ==============================================================================
 #  RUN
 # ==============================================================================
+import os
+
+server = app.server   # IMPORTANT for deployment
+
 if __name__ == "__main__":
     print("\n" + "=" * 55)
     print("  🌍 UN Waste Management Dashboard")
     print("=" * 55 + "\n")
-    app.run(debug=False)
+
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=False)
